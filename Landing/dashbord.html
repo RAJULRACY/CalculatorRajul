@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav style="background-color: bisque; height: 70px; ">
+        <h3 >LOGO</h3>
+        <button onclick="logOut()" style="float: right; margin-top: 0px;" type="button" >Logout</button>
+    </nav>
+    <br><br>
+    <h1>Welcome <span id="displayUser" style="color: rgb(255, 0, 0);">User</span></h1>
+</body>
+<script>
+    if(localStorage.getItem("username")){
+        displayUser.innerHTML=localStorage.getItem("username")
+    }else{
+        alert("Please Login !!!!!!!!")
+        window.location="login.html"
+    }
+    function logOut(){
+        //clear the local storage
+        localStorage.clear()
+
+        //redirect to login page
+        window.location="login.html"
+    }
+</script>
+</html>
